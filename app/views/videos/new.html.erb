@@ -1,0 +1,6 @@
+<%= form_for(@videos) do |f| %>
+  <%= f.label :clip %>
+  <%= f.file_field :clip %>
+
+  <%= f.submit "Submit" %>
+<% end %>
