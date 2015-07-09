@@ -1,4 +1,18 @@
 class VideosController < ApplicationController
+  def index
+    @videos = Video.all
+    @clips_array = clips_array
+    binding.pry
+  end
+
+  def clips_array
+    @array = []
+    @videos.each do |v|
+      @array << v.clip
+    end
+    @array
+  end
+
   def new
     @videos = Video.new
   end
