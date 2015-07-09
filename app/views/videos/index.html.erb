@@ -1,3 +1,4 @@
 
 
-  <%= content_tag(:iframe, '', src: @clips_array, width: 560, height: 315, frameborder: 0) %>
+
+  <%= video_tag @clips_array, controls: true %>
