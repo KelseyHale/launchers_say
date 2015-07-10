@@ -4,4 +4,4 @@
 <iframe width="560" height="315" src="<%= v.clip %>" frameborder="0" allowfullscreen></iframe>
 <% end %>
 
-<%= content_tag(:iframe, '', src: @video.clip, width: 560, height: 315, frameborder: 0) %>
+s <%= content_tag(:iframe, '', src: @video.clip, width: 560, height: 315, frameborder: 0) %>
