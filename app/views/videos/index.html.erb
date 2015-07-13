@@ -1,0 +1,25 @@
+  <%= video_tag @clips_array[0], controls: true, id: "myVideo", autoplay: true %>
+
+  <script type='text/javascript'>
+      document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+      function myHandler(e) {
+
+          var video = "2015-05-17_16.58.36.mov"
+          var video_src = $("video").attr("src").split("/")
+
+          video_src.pop();
+          video_src.pop();
+          video_src.push("2");
+          video_src.push(video);
+          video_src = video_src.join("/");
+          $("video").attr("src", video_src)
+
+
+
+
+          if(!e) { e = window.event;
+        }
+          // What you want to do after the event
+      }
+
+  </script>

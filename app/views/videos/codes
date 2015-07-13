@@ -1,0 +1,12 @@
+<iframe width="560" height="315" src="<%= @clips_array %>" frameborder="0" allowfullscreen></iframe>
+
+<%= @videos.each do |v| %>
+<iframe width="560" height="315" src="<%= v.clip %>" frameborder="0" allowfullscreen></iframe>
+<% end %>
+
+s <%= content_tag(:iframe, '', src: @video.clip, width: 560, height: 315, frameborder: 0) %>
+
+var cities = ["Melbourne", "Amman", "Helsinki", "NYC", "Boston", "Rome", "Dublin"];
+for (var i = 0; i < cities.length; i++) {
+    console.log("I would like to visit " + cities[i]);
+}
