@@ -1,16 +1,17 @@
-  <%= video_tag @clips_array[0], controls: true, id: "myVideo", autoplay: true %>
+  <%= video_tag @clips_array, controls: true, id: "videos", autoplay: true %>
 
-  <script type='text/javascript'>
-      document.getElementById('myVideo').addEventListener('ended',myHandler,false);
-      function myHandler(e) {
-
-          var video = "2015-05-17_16.58.36.mov"
+   <script type='text/javascript'>
+      var clips = document.getElementById('videos')
+        // debugger;
+      for (var i = 0; i < clips.length; i++) {
+          debugger;
+        clips[0].addEventListener('ended',myHandler,false);
+        function myHandler(e) {
           var video_src = $("video").attr("src").split("/")
-
           video_src.pop();
           video_src.pop();
-          video_src.push("2");
-          video_src.push(video);
+          video_src.push(i + 1);
+          video_src.push(clips[i]);
           video_src = video_src.join("/");
           $("video").attr("src", video_src)
 
@@ -18,8 +19,34 @@
 
 
           if(!e) { e = window.event;
-        }
+          }
           // What you want to do after the event
+        }
       }
+
+      // document.getElementById('clips[i]').addEventListener('ended',myHandler,false);
+      // function myHandler(e) {
+
+        // var cities = ["Melbourne", "Amman", "Helsinki", "NYC", "Boston", "Rome", "Dublin"];
+        // for (var i = 0; i < cities.length; i++) {
+        //     console.log("I would like to visit " + cities[i]);
+        // }
+          // var video = "2015-05-17_16.58.36.mov"
+          // var video_src = $("video").attr("src").split("/")
+          //
+      //     video_src.pop();
+      //     video_src.pop();
+      //     video_src.push("2");
+      //     video_src.push(video);
+      //     video_src = video_src.join("/");
+      //     $("video").attr("src", video_src)
+      //
+      //
+      //
+      //
+      //     if(!e) { e = window.event;
+      //   }
+      //     What you want to do after the event
+      // }
 
   </script>

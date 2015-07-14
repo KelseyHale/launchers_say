@@ -2,6 +2,8 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @clips_array = clips_array
+    @clip_paths = clip_paths
+    binding.pry
   end
 
   def clips_array
@@ -10,6 +12,14 @@ class VideosController < ApplicationController
       @array << v.clip
     end
     @array
+  end
+
+  def clip_paths
+    @paths = []
+    @videos.each do |v|
+      @paths << v.clip.path
+    end
+    @paths
   end
 
   def new
